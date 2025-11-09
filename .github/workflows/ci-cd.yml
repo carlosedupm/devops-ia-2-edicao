@@ -53,7 +53,7 @@ jobs:
       - name: Validate test results
         run: |
           # O pytest já falha se algum teste falhar, mas podemos adicionar validações extras aqui
-          echo "✅ Todos os testes passaram com sucesso!"
+          echo "All tests passed successfully!"
 
   build-and-push:
     name: Build and Push Docker Image
@@ -99,5 +99,7 @@ jobs:
           cache-to: type=inline
 
       - name: Image digest
-        run: echo "✅ Image pushed successfully with tags: ${{ steps.meta.outputs.tags }}"
+        run: |
+          echo "Image pushed successfully"
+          echo "Tags: ${{ steps.meta.outputs.tags }}"
 
