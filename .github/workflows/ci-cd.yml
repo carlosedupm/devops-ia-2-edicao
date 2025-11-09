@@ -44,8 +44,10 @@ jobs:
 
       - name: Run pytest
         working-directory: ${{ env.PROJECT_DIR }}
+        env:
+          PYTHONPATH: ${{ github.workspace }}/${{ env.PROJECT_DIR }}:${{ env.PYTHONPATH }}
         run: |
-          pytest -v --tb=short
+          pytest -v --tb=short --rootdir=${{ github.workspace }}/${{ env.PROJECT_DIR }}
 
       - name: Validate test results
         run: |
