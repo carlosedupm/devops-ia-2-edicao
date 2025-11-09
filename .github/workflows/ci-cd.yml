@@ -6,9 +6,6 @@ on:
       - main
     paths:
       - '02-encontros-tech/**'
-    paths-ignore:
-      - '02-encontros-tech/**.md'
-      - '02-encontros-tech/.gitignore'
   workflow_dispatch:  # Permite execução manual
 
 permissions:
